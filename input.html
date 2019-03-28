@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <input type="text" onkeydown="return onlyDigits(event)">
+    </body>
+    <script>
+        function onlyDigits(e){
+            var kp=e.keyCode;
+            if(kp<=57 && kp>=48){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    </script>
+</html>

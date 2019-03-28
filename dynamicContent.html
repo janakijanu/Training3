@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script>
+            function init(){
+                document.forms[0].elements[1].addEventListener("click",doAdd);
+                var listItems=document.getElementsByTagName("li");
+                for(i in listItems)
+                {
+                    listItems[i].addEventListener("mouseover",changeColor);
+
+                }
+            }
+
+            function changeColor(e)
+            {
+                e.target.style.color='blue';
+            }
+            function doAdd()
+            {
+                var text=document.forms[0].elements[0].value;
+                var mylist=document.getElementById("countryList");
+                var newnode=document.createTextNode(text);
+                var itemNode=document.createElement("li");
+                itemNode.addEventListener("mouseover",changeColor)
+                itemNode.appendChild(newnode);
+                mylist.appendChild(itemNode);
+                document.getElementById("textbox").value = "";
+
+                //newnode.remove();
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <form>
+            <input id="textbox"><input type="button" value="ADD TO LIST">
+        </form>
+        <h1>Country List</h1>
+        <ul id="countryList">
+            <li>India</li>
+            <li>UK</li>
+            <li>USA</li>
+        </ul>
+    </body>
+</html>

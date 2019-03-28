@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script>
+            var arr=[1,2,3,4,5];
+            function f1(a){
+                alert(a);
+                
+                function abc(){
+                    return a+10;
+                }
+                return abc;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            for(i=0;i<arr.length;i++){
+                str="<input type='button' value='"+arr[i]+"' onclick='f1("+i+")'>"
+                document.write(str);
+            }
+        </script>
+    </body>
+</html>

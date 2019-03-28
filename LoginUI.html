@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script>
+            function doConfirm(){
+                var userChoice;
+                userChoice=window.confirm("Are you Sure?");
+                return userChoice;
+            }
+        </script>
+    </head>
+
+    <body>
+        <form action="LoginSuccess.html" onsubmit="return doConfirm();">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        Login
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>User Name</td>
+                    <td><input></td>
+                </tr>
+                <tr>
+                        <td>Password</td>
+                        <td><input type="password"></td>
+                    </tr>
+                <tr>
+                    <td>
+                        <input type='submit' value='Login'>
+                        <input type='reset' value='Cancel'>
+                    </td>
+                
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

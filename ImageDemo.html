@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            /* img{
+                width: 8%;
+                height: 8%;
+            } */
+        </style>
+        <script>
+            // function zoom(i){
+            //   //  alert(i.src);
+            //    // alert(i.width);
+            //    // alert(i.height);
+            //    i.width="1000";
+            //    i.height="1000";
+            //    i.src="images/images4/Austen_Compact_Desk_Two_Tone_Finish_00_IMG_9999_181_LP_3.jpg";
+            // }
+            var orig_width;
+            var orig_height;
+            function zoomIn(i){
+                orig_width=i.width;
+                orig_height=i.height;
+                i.width=i.width*2;
+                i.height=i.height*2;
+            }
+            function zoomOut(i){
+                i.width=orig_width;
+                i.height=orig_height;
+            }
+        </script>
+    </head>
+    <body>
+        <img id="back-imag" src="images/images3/Terry_Study_Table_Golden_Oak_00_LP.jpg" width="500" height="600" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+    </body>
+</html>

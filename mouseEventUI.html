@@ -1,0 +1,49 @@
+<html>
+    <body>
+        <p id="output">
+        </p>
+        <div id="div1">
+            <p id="p1">
+                hcl,chennai
+                <br>
+                js training
+                hcl,chennai
+                <br>
+                js training
+                hcl,chennai
+                <br>
+                js training
+                hcl,chennai
+                <br>
+                js training
+                hcl,chennai
+                <br>
+                js training
+                hcl,<i id="innerMost">chennai</i>
+                <br>
+                js training
+
+            </p>
+        </div>
+        <script>
+            document.addEventListener("contextmenu",function(e)
+            {
+                document.getElementById("output").innerText=e.clientX+","+e.clientY;
+                e.preventDefault();
+
+                
+            })
+            document.getElementById("div1").addEventListener("click",doAction,true);
+            document.getElementById("p1").addEventListener("click",doAction,true);
+            document.getElementById("innerMost").addEventListener("click",doAction,true);
+
+            document.getElementById("div1").addEventListener("click",doAction);
+            document.getElementById("p1").addEventListener("click",doAction);
+            document.getElementById("innerMost").addEventListener("click",doAction);
+            function doAction(event)
+            {
+                alert("doAction......."+event.currentTarget);
+            }
+            </script>
+    </body>
+</html>

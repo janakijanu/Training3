@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <script src="student.js"></script>
+        <script>
+            var student=new Student();
+            function NameController(inp,out)
+            {
+                this.inputElement=document.getElementById(inp);
+                this.outputElement=document.getElementById(out);
+                this.inputElement.addEventListener("keyup", manageName);
+                //console.log(this.outputElement.innerText);
+                self=this;
+                function manageName(e){
+                    //console.log(e.target.value);
+                    var inpText=e.target.value;
+                    student.setName1(inpText);
+                    self.outputElement.innerText=student.name;
+                }
+            }
+
+            function init()
+            {
+                var nc=new NameController("txtName","OutputName");
+
+            }
+            
+            
+        </script>
+    </head>
+    <body onload="init()">
+        <table>
+            <form>
+                <tr>
+                    <td>
+                        Name<br/>
+                        <input id="txtName">
+                    </td>
+                    <td>
+                        Mark1<br/>
+                        <input id="txtMark1">
+                    </td>
+                    <td>
+                        Mark2<br/>
+                        <input id="txtMark2">
+                    </td>
+                    <td>
+                        Mark3<br/>
+                        <input id="txtMark3">
+                    </td>
+                </tr>
+            </form>
+        </table>
+        <table class="outputTable">
+            <tr>
+                <td>Name</td>
+                <td id="OutputName">advb</td>
+            </tr>
+            <tr>
+                <td>Mark1</td>
+                <td id="OutputMark1"></td>
+            </tr>
+            <tr>
+                <td>Mark2</td>
+                <td id="OutputMark2"></td>
+            </tr>
+            <tr>
+                <td>Mark3</td>
+                <td id="OutputMark3"></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td id="OutputTotal"></td>
+            </tr>
+            <tr>
+                <td>Average</td>
+                <td id="OutputAvg"></td>
+            </tr>
+        </table>
+    </body>
+</html>

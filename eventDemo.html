@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script>
+            window.addEventListener("load",f1,);
+            window.addEventListener("beforeunload",f5);
+            function welcome(){
+                var divelement=document.getElementById("div1");
+                var paraelement=document.getElementById("para1");
+                divelement.addEventListener("click",f3);
+                paraelement.addEventListener("click",f2);
+
+            }
+            function f1(){
+                alert("window is Loaded");
+            }
+            function f5(){
+                alert("window will close now")
+            }
+            function f2(e){
+                //alert(window.event.clientX + " : "+ window.event.clientY);
+                alert(e.clientX+" : "+e.clientY);
+                e.stopPropagation();
+            }
+            function f3(e){
+                alert(e.clientX+" : "+e.clientY);
+            }
+            function f4(e){
+                alert(e.clientX+" : "+e.clientY);
+            }
+        </script>
+    </head>
+    <body onload="welcome()" onclick="f4(event)">
+        <div id="div1">
+            <p id="para1">Welcome</p>
+        </div>
+    </body>
+</html>
